@@ -1,18 +1,19 @@
 :root {
     /* Electric Palette */
     --bg: #ffffff;
-    --text-main: #1e293b;
-    --text-light: #64748b;
+    --text-main: #1e293b; /* Slate 900 */
+    --text-light: #64748b; /* Slate 500 */
     
     --primary: #6366f1; /* Indigo */
     --secondary: #ec4899; /* Pink */
     --accent: #8b5cf6; /* Violet */
     --cyan: #06b6d4;
+    --green: #10b981;
     
     --glass: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.5);
     --radius: 16px;
     --shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,172 +26,200 @@ body {
     line-height: 1.6;
 }
 
-/* --- 1. BLOBS (To pozadí) --- */
+/* --- 1. BLOBS (Pozadí) --- */
 .blob-cont {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    background: #fff; /* Fallback */
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; overflow: hidden; background: #fff;
 }
-
 .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6; /* Víc viditelné */
-    animation: float 10s infinite alternate;
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 10s infinite alternate;
 }
-
 .blob-1 {
-    width: 600px; height: 600px;
-    background: #e0e7ff; /* Světle modrá */
-    background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, rgba(236,72,153,0.15) 100%);
-    top: -100px; left: -100px;
+    width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(236,72,153,0.2) 100%);
+    top: -150px; left: -150px;
 }
-
 .blob-2 {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(139,92,246,0.15) 100%);
-    bottom: -50px; right: -100px;
-    animation-duration: 15s;
+    width: 500px; height: 500px; background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, rgba(139,92,246,0.2) 100%);
+    bottom: -100px; right: -100px; animation-duration: 15s;
 }
-
 .blob-3 {
-    width: 300px; height: 300px;
-    background: rgba(236, 72, 153, 0.1);
-    top: 40%; left: 30%;
-    animation-duration: 12s;
+    width: 300px; height: 300px; background: rgba(236, 72, 153, 0.15); top: 40%; left: 30%; animation-duration: 12s;
 }
-
 @keyframes float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(30px, 50px) scale(1.1); }
+    0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30px, 50px) scale(1.05); }
 }
 
-/* --- 2. TYPOGRAPHY & UTILS --- */
-h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+/* --- 2. UTILS --- */
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .max-800 { max-width: 800px; }
 .center-text { text-align: center; margin-bottom: 40px; }
 
 .text-gradient {
     background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-
 .highlight { color: var(--primary); position: relative; display: inline-block; }
 .highlight::after {
-    content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 8px;
-    background: rgba(236, 72, 153, 0.2); z-index: -1; transform: skewX(-10deg);
+    content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 12px;
+    background: rgba(99, 102, 241, 0.15); z-index: -1; border-radius: 4px;
 }
 
 /* --- 3. NAV --- */
 .glass-nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding: 16px 0;
+    background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.04); padding: 16px 0;
 }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.5rem; font-weight: 800; }
-.dot { color: var(--secondary); }
-.nav-links a { text-decoration: none; color: var(--text-main); margin-left: 24px; font-weight: 600; font-size: 0.95rem; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); }
+.dot { color: var(--primary); }
+.nav-links a { text-decoration: none; color: var(--text-main); margin-left: 24px; font-weight: 600; font-size: 0.9rem; }
 .btn-nav { 
-    background: var(--text-main); color: white !important; 
-    padding: 10px 20px; border-radius: 50px; transition: transform 0.2s;
+    background: var(--text-main); color: white !important; padding: 10px 22px; border-radius: 50px; transition: 0.3s;
 }
-.btn-nav:hover { transform: scale(1.05); }
+.btn-nav:hover { background: var(--primary); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
 
 /* --- 4. HERO --- */
-.hero { padding: 80px 0; text-align: center; }
+.hero { padding: 100px 0 80px; text-align: center; }
 .hero-wrapper { max-width: 700px; margin: 0 auto 60px; }
-
 .pill {
-    display: inline-block; background: #fff; border: 1px solid #e2e8f0;
-    padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 700;
-    color: var(--primary); margin-bottom: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    display: inline-block; background: #fff; padding: 8px 20px; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid rgba(99, 102, 241, 0.1);
 }
-
 .hero h1 { font-size: 4rem; margin-bottom: 24px; color: var(--text-main); }
 .subtitle { font-size: 1.25rem; color: var(--text-light); margin-bottom: 40px; }
 
-/* GLOW BUTTON */
 .btn-glow {
-    display: inline-block;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    color: white; padding: 18px 40px; border-radius: 50px;
-    text-decoration: none; font-weight: 700; font-size: 1.1rem;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-    transition: all 0.3s ease; border: none; cursor: pointer;
+    display: inline-block; background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5); transition: all 0.3s ease; border: none; cursor: pointer;
 }
-.btn-glow:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.5);
-}
+.btn-glow:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -10px rgba(236, 72, 153, 0.5); }
 
 .cta-row { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.users-joined { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--text-light); }
+.users-joined { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
 .avatars { display: flex; }
-.av { width: 30px; height: 30px; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #333; margin-left: -10px; }
+.av { width: 32px; height: 32px; border-radius: 50%; border: 3px solid white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; margin-left: -12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 .av:first-child { margin-left: 0; }
 
-/* Bento Grid */
-.hero-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+/* Hero Grid */
+.hero-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
 .grid-card {
-    background: rgba(255,255,255,0.6); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.8); padding: 24px; border-radius: 20px;
-    text-align: left; transition: all 0.3s;
+    background: rgba(255,255,255,0.7); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.6); padding: 30px; border-radius: 24px;
+    text-align: left; transition: all 0.3s; box-shadow: var(--shadow);
 }
-.grid-card:hover { background: white; transform: translateY(-5px); box-shadow: var(--shadow); }
-.grid-card .icon { font-size: 1.5rem; display: block; margin-bottom: 10px; }
-.grid-card strong { display: block; font-size: 1.1rem; }
-.grid-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
-.active-card { border-color: var(--green); position: relative; }
-.status-dot { display: block; width: 10px; height: 10px; background: #10b981; border-radius: 50%; box-shadow: 0 0 0 4px rgba(16,185,129,0.2); margin-bottom: 15px; }
+.grid-card:hover { background: white; transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.grid-card .icon { font-size: 1.8rem; display: block; margin-bottom: 15px; }
+.grid-card strong { display: block; font-size: 1.15rem; margin-bottom: 5px; }
+.grid-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; }
+.active-card { border: 2px solid var(--green); background: white; }
+.status-dot { display: block; width: 12px; height: 12px; background: var(--green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(16,185,129,0.2); margin-bottom: 15px; }
 
-/* --- 5. TICKER --- */
-.ticker-wrap { background: var(--text-main); color: white; padding: 12px 0; overflow: hidden; transform: rotate(-1deg) scale(1.02); margin: 40px 0; }
-.ticker { display: flex; gap: 40px; animation: ticker 20s linear infinite; white-space: nowrap; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; }
+/* --- 5. TICKER (SROVNÁNO) --- */
+.ticker-wrap { 
+    background: var(--text-main); color: white; padding: 16px 0; 
+    overflow: hidden; margin: 60px 0; /* Rotace odstraněna */
+}
+.ticker { display: flex; gap: 40px; animation: ticker 25s linear infinite; white-space: nowrap; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* --- 6. CARDS --- */
-.section-padded { padding: 80px 0; }
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+/* --- 6. FEATURES --- */
+.section-padded { padding: 100px 0; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
 .f-card {
-    background: white; padding: 40px; border-radius: 24px;
-    border: 1px solid #f1f5f9; position: relative; overflow: hidden;
-    transition: all 0.3s;
+    background: white; padding: 40px; border-radius: 24px; border: 1px solid #f1f5f9;
+    transition: all 0.3s; box-shadow: var(--shadow);
 }
-.f-card:hover { border-color: var(--primary); box-shadow: var(--shadow); }
-.f-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; color: white; }
+.f-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.f-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 24px; color: white; }
 .gradient-1 { background: linear-gradient(135deg, var(--primary), var(--accent)); }
-.gradient-2 { background: linear-gradient(135deg, var(--secondary), var(--accent)); }
+.gradient-2 { background: linear-gradient(135deg, var(--secondary), var(--primary)); }
 .gradient-3 { background: linear-gradient(135deg, var(--cyan), var(--primary)); }
+.f-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
 
-/* --- 7. VIBE SECTION --- */
-.grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.tiny-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; color: var(--primary); text-transform: uppercase; margin-bottom: 10px; display: block; }
-.lead { font-size: 1.2rem; margin-bottom: 20px; font-weight: 500; }
-.stat-row { display: flex; gap: 40px; margin-top: 30px; }
-.stat-row strong { font-size: 2rem; display: block; color: var(--text-main); }
+/* --- 7. VIBE SECTION (SROVNÁNO) --- */
+.grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.tiny-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; color: var(--primary); text-transform: uppercase; margin-bottom: 12px; display: block; }
+.lead { font-size: 1.3rem; margin-bottom: 24px; font-weight: 500; color: var(--text-main); }
+.stat-row { display: flex; gap: 50px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f5f9; }
+.stat-row strong { font-size: 2.5rem; display: block; color: var(--text-main); line-height: 1; margin-bottom: 5px; }
 
 .chat-interface {
-    background: white; border-radius: 24px; padding: 30px;
-    box-shadow: var(--shadow); border: 1px solid #f1f5f9;
-    display: flex; flex-direction: column; gap: 15px; transform: rotate(2deg);
+    background: white; border-radius: 30px; padding: 40px;
+    box-shadow: var(--shadow-lg); border: 1px solid #f1f5f9;
+    display: flex; flex-direction: column; gap: 20px; 
+    /* Rotace odstraněna, přidán silnější stín pro hloubku */
 }
-.chat-bubble { padding: 12px 18px; border-radius: 18px; font-size: 0.95rem; max-width: 85%; }
-.received { background: #f1f5f9; align-self: flex-start; border-bottom-left-radius: 4px; }
-.sent { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 4px; box-shadow: 0 4px 10px rgba(99,102,241,0.3); }
-.typing-indicator span { display: inline-block; animation: blink 1s infinite; margin: 0 1px; font-size: 1.2rem; }
+.chat-bubble { padding: 14px 22px; border-radius: 22px; font-size: 1rem; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.received { background: #f8fafc; align-self: flex-start; border-bottom-left-radius: 4px; color: var(--text-main); }
+.sent { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 4px; box-shadow: 0 5px 15px rgba(99,102,241,0.2); }
+.typing-indicator span { display: inline-block; animation: blink 1s infinite; margin: 0 2px; font-size: 1.4rem; }
 .typing-indicator span:nth-child(2) { animation-delay: 0.2s; } 
 .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-/* --- 8. FAQ & ACCORDION --- */
+/* --- 8. FAQ --- */
 .accordion { display: flex; flex-direction: column; gap: 16px; }
-.acc-item { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition
+.acc-item { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: 0.3s; box-shadow: var(--shadow); }
+.acc-item:hover { border-color: var(--primary); box-shadow: var(--shadow-lg); }
+.acc-head { padding: 24px; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.acc-head::after { content: '+'; font-size: 1.5rem; color: var(--primary); }
+.acc-item:hover .acc-body { display: block; animation: fadeIn 0.3s; }
+.acc-body { padding: 0 24px 24px; color: var(--text-light); display: none; }
+
+/* --- 9. DARK CTA (OPRAVA FORMULÁŘE) --- */
+.cta-dark { padding: 80px 24px; }
+.cta-box {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    color: white; border-radius: 40px; padding: 80px 40px; text-align: center;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); max-width: 900px; margin: 0 auto;
+}
+.cta-text h2 { font-size: 2.5rem; margin-bottom: 15px; }
+.dark-form { max-width: 500px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 15px; }
+
+.input-wrap { display: flex; gap: 15px; }
+/* Oprava inputů a selectů */
+input, select { 
+    width: 100%; padding: 16px 20px; border-radius: 14px; 
+    background: rgba(255,255,255,0.08); /* Průhlednější pozadí */
+    color: white; font-family: inherit; font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    -webkit-appearance: none; appearance: none; /* Reset pro mobily */
+}
+input:focus, select:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.12); }
+
+/* Vlastní šipka pro select, aby to vypadalo dobře */
+select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat; background-position: right 20px center; background-size: 18px; padding-right: 50px; cursor: pointer;
+}
+/* Oprava barev možností v selectu (aby nebyly bílé na bílém) */
+select option { background: var(--text-main); color: white; }
+
+/* Oprava checkboxu */
+.check-wrap { 
+    display: flex; align-items: center; justify-content: center; gap: 12px; 
+    font-size: 0.95rem; color: #cbd5e1; margin: 10px 0; 
+}
+input[type="checkbox"] {
+    width: 20px; height: 20px; accent-color: var(--primary); /* Moderní barva checkboxu */
+}
+.full-width { width: 100%; }
+
+/* --- 10. FOOTER --- */
+footer { padding: 40px 0; font-size: 0.9rem; color: var(--text-light); border-top: 1px solid #f1f5f9; background: white; }
+.footer-in { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-weight: 800; color: var(--text-main); }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .hero-grid, .grid-split { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .input-wrap { flex-direction: column; } /* Inputy pod sebe na mobilu */
+    .cta-box { padding: 40px 24px; }
+    .ticker { animation-duration: 15s; }
+    .chat-interface { padding: 25px; }
+}
