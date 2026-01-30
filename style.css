@@ -24,7 +24,7 @@ body {
 }
 
 /* --- TEXTURE & BACKGROUND --- */
-/* Technická mřížka - nyní viditelná */
+/* Technická mřížka */
 .bg-grid {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2;
     background-image: 
@@ -107,7 +107,7 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
     font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
 }
 
-/* --- REQUIREMENTS & DASHBOARD --- */
+/* --- REQUIREMENTS --- */
 .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .req-list { list-style: none; margin-top: 30px; }
 .req-list li { display: flex; gap: 15px; margin-bottom: 24px; }
@@ -117,33 +117,48 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
 }
 .tiny-label { color: var(--primary); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; display: block; margin-bottom: 10px; }
 
-/* Dashboard Styling */
-.stats-dashboard {
-    background: white; border-radius: 24px; padding: 25px;
-    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05);
-    max-width: 450px; margin: 0 auto;
+/* --- APP DASHBOARD (New Professional Look) --- */
+.app-card {
+    background: white; border-radius: 24px; padding: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0,0,0,0.06);
+    max-width: 400px; margin: 0 auto;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
 }
-.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: 700; color: var(--text-main); }
-.live-badge { color: #ef4444; font-size: 0.75rem; font-weight: 800; animation: blink 2s infinite; }
+.app-card:hover { transform: rotate(0deg) scale(1.02); }
 
-.payout-item { 
-    display: flex; justify-content: space-between; align-items: center; 
-    padding: 15px 0; border-bottom: 1px solid #f1f5f9; 
+.app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.user-info { display: flex; gap: 12px; align-items: center; }
+.avatar-circle { 
+    width: 42px; height: 42px; background: var(--text-main); color: white; 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;
 }
-.pi-left { display: flex; gap: 12px; align-items: center; }
-.pi-avatar { 
-    width: 40px; height: 40px; border-radius: 10px; 
-    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;
-}
-.pi-left small { display: block; font-size: 0.75rem; color: var(--text-gray); }
-.pi-right { font-weight: 700; font-size: 1rem; }
-.positive { color: var(--green); }
+.user-text strong { display: block; font-size: 0.95rem; line-height: 1.2; }
+.user-text small { font-size: 0.75rem; color: var(--text-gray); }
+.menu-dots { color: #cbd5e1; letter-spacing: 2px; font-weight: 700; cursor: pointer; }
 
-.dash-footer { 
-    margin-top: 20px; background: #f8fafc; padding: 15px; border-radius: 12px; 
-    text-align: center; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;
+.balance-section { margin-bottom: 25px; }
+.balance-section .label { font-size: 0.85rem; color: var(--text-gray); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.balance-section .amount { font-size: 2.5rem; font-weight: 800; color: var(--text-main); line-height: 1; letter-spacing: -1px; }
+.trend { font-size: 0.85rem; margin-top: 8px; font-weight: 600; }
+.trend.positive { color: var(--green); }
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+.stat-item { background: #f8fafc; padding: 12px 16px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.stat-label { display: block; font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+.stat-value { display: block; font-weight: 700; font-size: 1rem; color: var(--text-main); }
+.active-text { color: var(--green); }
+
+/* Mini Chart */
+.mini-chart { display: flex; align-items: flex-end; justify-content: space-between; height: 60px; gap: 8px; }
+.bar { 
+    width: 100%; background: #e2e8f0; border-radius: 4px; 
+    transition: height 1s ease-out; 
 }
-.dash-footer strong { color: var(--primary); font-size: 1.1rem; }
+.bar.active { background: var(--primary); }
 
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
