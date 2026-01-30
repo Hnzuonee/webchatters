@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderátor Online Komunit | Práce z domova</title>
+    <meta name="description" content="Flexibilní práce z domova. Moderuj chat, komunikuj s lidmi a vydělávej podle svého času.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">ChatJob.</div>
+            <a href="#apply" class="btn-small">Chci začít</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Změň psaní v <span class="highlight">příjem</span>.</h1>
+            <p class="subtitle">Hledáme komunikativní moderátory pro online komunity. Pracuj odkudkoli, kdykoli a bez šéfa za zády.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="emoji">🏠</span>
+                    <span>100% Home Office</span>
+                </div>
+                <div class="stat">
+                    <span class="emoji">💸</span>
+                    <span>Týdenní výplaty</span>
+                </div>
+                <div class="stat">
+                    <span class="emoji">💬</span>
+                    <span>Jen text (žádné volání)</span>
+                </div>
+            </div>
+            <a href="#apply" class="btn-primary">Mám zájem o spolupráci</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2>O co vlastně jde?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>💬 Moderace chatu</h3>
+                    <p>Odpovídáš na zprávy uživatelů na zábavních platformách. Udržuješ konverzaci živou, zábavnou a plynulou.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Anonymita</h3>
+                    <p>Vystupuješ pod přezdívkou. Tvé soukromí je chráněno. Nikdo nevidí tvůj obličej, nikdo neslyší tvůj hlas.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 Zaškolení zdarma</h3>
+                    <p>Nemusíš mít praxi. Dostaneš manuál, přístup do systému a mentora, který ti v začátcích pomůže.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Časté dotazy</h2>
+            <div class="faq-item">
+                <strong>Musím umět anglicky?</strong>
+                <p>Ne, hledáme primárně lidi pro český a slovenský trh (případně dle projektu).</p>
+            </div>
+            <div class="faq-item">
+                <strong>Je to vhodné pro studenty nebo na MD?</strong>
+                <p>Absolutně. Je na tobě, zda tomu dáš hodinu denně nebo deset.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Co k tomu potřebuji?</strong>
+                <p>Počítač/notebook, stabilní internet a věk 18+. To je vše.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="cta-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Přidej se k týmu</h2>
+                <p>Vyplň krátký formulář a ozveme se ti s detaily.</p>
+                
+                <form action="#" method="POST" class="signup-form">
+                    <div class="form-group">
+                        <label for="name">Jméno</label>
+                        <input type="text" id="name" name="name" required placeholder="Tvé jméno">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="tvoj@email.cz">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Je ti 18+ let?</label>
+                        <select id="age" name="age">
+                            <option value="yes">Ano, je mi 18+</option>
+                            <option value="no">Ne</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Odeslat přihlášku</button>
+                    <p class="disclaimer">Odesláním souhlasíš se zpracováním údajů pro účely náboru.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ChatJob Team. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
