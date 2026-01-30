@@ -127,12 +127,48 @@
             </div>
             
             <div class="visual-side">
-                <div class="laptop-mockup">
-                    <div class="screen-content">
-                        <div class="chat-msg left">Hello, are you online? 👋</div>
-                        <div class="chat-msg right">Hi! Yes, I am here for you. How can I help? 😊</div>
-                        <div class="chat-msg left">I want to buy the premium content.</div>
-                        <div class="sale-alert">💰 BINGO! Prodej uzavřen. +Provize</div>
+                <div class="stats-dashboard">
+                    <div class="dash-header">
+                        <span>Live Payouts</span>
+                        <span class="live-badge">● LIVE</span>
+                    </div>
+                    
+                    <div class="payout-item">
+                        <div class="pi-left">
+                            <div class="pi-avatar" style="background: #e0e7ff; color: #4f46e5;">MK</div>
+                            <div>
+                                <strong>Marek K.</strong>
+                                <small>Student • 28h online</small>
+                            </div>
+                        </div>
+                        <div class="pi-right positive">+ 18.450 Kč</div>
+                    </div>
+
+                    <div class="payout-item">
+                        <div class="pi-left">
+                            <div class="pi-avatar" style="background: #fce7f3; color: #ec4899;">LJ</div>
+                            <div>
+                                <strong>Lucie J.</strong>
+                                <small>MD • 15h online</small>
+                            </div>
+                        </div>
+                        <div class="pi-right positive">+ 8.200 Kč</div>
+                    </div>
+
+                    <div class="payout-item">
+                        <div class="pi-left">
+                            <div class="pi-avatar" style="background: #dcfce7; color: #10b981;">TM</div>
+                            <div>
+                                <strong>Tomáš M.</strong>
+                                <small>Full-time • 42h online</small>
+                            </div>
+                        </div>
+                        <div class="pi-right positive">+ 32.100 Kč</div>
+                    </div>
+
+                    <div class="dash-footer">
+                        <span>Průměrný výdělek týmu:</span>
+                        <strong>345 Kč / hod</strong>
                     </div>
                 </div>
             </div>
@@ -166,7 +202,11 @@
                     <h2>Chceš to zkusit?</h2>
                     <p>Napiš nám. Ozveme se jen vybraným uchazečům.</p>
                     
-                    <form action="#" method="POST" class="simple-form">
+                    <form action="https://formsubmit.co/TVUJ_EMAIL@GMAIL.COM" method="POST" class="simple-form">
+                        
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nová přihláška z webu!">
+
                         <div class="form-row">
                             <input type="text" name="name" required placeholder="Jméno a Příjmení">
                             <input type="text" name="age" required placeholder="Věk">
@@ -195,9 +235,29 @@
     </section>
 
     <footer>
-        <div class="container footer-in">
-            <strong>MediaChat.</strong>
-            <span>© 2026 Remote Team</span>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">MediaChat<span class="dot">.</span></div>
+                    <p>Moderní platforma pro monetizaci digitálního obsahu a community management.</p>
+                </div>
+                <div class="footer-links">
+                    <strong>Společnost</strong>
+                    <a href="#">O nás</a>
+                    <a href="#">Kontakt</a>
+                    <a href="#">Kariéra</a>
+                </div>
+                <div class="footer-links">
+                    <strong>Legislativa</strong>
+                    <a href="#">GDPR</a>
+                    <a href="#">Podmínky spolupráce</a>
+                    <a href="#">Ochrana údajů</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 MediaChat Team. Všechna práva vyhrazena.</span>
+                <span class="secure-badge">🔒 100% Secure Data</span>
+            </div>
         </div>
     </footer>
 
