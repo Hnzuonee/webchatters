@@ -99,21 +99,33 @@
                     <div class="app-header">
                         <div class="user-info">
                             <div class="avatar-circle">MC</div>
-                            <div class="user-text"><strong>Kalkulačka odměn</strong><small>Odhad výdělku</small></div>
+                            <div class="user-text">
+                                <strong class="spaced-text">VÝDĚLKOVÝ POTENCIÁL</strong>
+                                <small class="spaced-text">Junior / Senior pozice</small>
+                            </div>
+                        </div>
+                        <div class="menu-dots">•••</div>
+                    </div>
+
+                    <div class="balance-section">
+                        <span class="label spaced-text">Měsíční odměna</span>
+                        <div class="amount">25 — 90k</div>
+                        <div class="trend positive spaced-text">Závisí na tvém výkonu</div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label spaced-text">Průměr týmu</span>
+                            <span class="stat-value spaced-text">42.500 Kč</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label spaced-text">Bonusy</span>
+                            <span class="stat-value active-text spaced-text">Neomezené</span>
                         </div>
                     </div>
-                    <div class="balance-section">
-                        <span class="label">Měsíční potenciál</span>
-                        <div class="amount" id="calc-amount">24.000 Kč</div>
-                        <div class="trend positive">Při <span id="hours-val">20</span>h týdně</div>
-                    </div>
-                    <div class="calculator-container">
-                        <input type="range" min="10" max="60" value="20" step="5" class="earnings-slider" id="hours-slider">
-                        <div class="slider-labels"><span>10h</span><span>Plný úvazek</span><span>60h</span></div>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">Hodinová sazba</span><span class="stat-value">~300 Kč</span></div>
-                        <div class="stat-item"><span class="stat-label">Bonusy</span><span class="stat-value active-text">Aktivní</span></div>
+                    
+                    <div class="card-footer-note spaced-text">
+                        * Částky jsou uvedeny včetně provizí z prodeje.
                     </div>
                 </div>
             </div>
@@ -137,23 +149,10 @@
     </section>
 
     <script>
-        // Dark Mode Logic
         const btn = document.getElementById('dark-mode-toggle');
         btn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-
-        // Calculator Logic
-        const slider = document.getElementById('hours-slider');
-        const hoursVal = document.getElementById('hours-val');
-        const calcAmount = document.getElementById('calc-amount');
-
-        slider.addEventListener('input', function() {
-            const hours = this.value;
-            const monthlyEarnings = hours * 4 * 300; // 300 Kč/h průměr
-            hoursVal.textContent = hours;
-            calcAmount.textContent = monthlyEarnings.toLocaleString('cs-CZ') + ' Kč';
         });
     </script>
 </body>
