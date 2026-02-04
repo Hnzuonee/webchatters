@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaChat | Online Content Team</title>
-    <meta name="description" content="Práce z domova pro mladý tým. Flexibilní směny, provize z prodeje, start ihned.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>MediaChat | Vydělávej online</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="bg-grid"></div>
-
     <div class="blob-cont">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -21,255 +17,184 @@
 
     <nav class="glass-nav">
         <div class="container nav-content">
-            <div class="logo">MediaChat<span class="dot">.</span></div>
+            <div class="logo">Media<span class="text-gradient">Chat</span></div>
             <div class="nav-links">
-                <a href="#details">Náplň práce</a>
-                <a href="#requirements">Požadavky</a>
-                <a href="#apply" class="btn-nav">Chci do týmu</a>
+                <a href="#about">Jak to funguje</a>
+                <a href="#apply" class="btn-nav">Chci začít</a>
+                <button id="dark-mode-toggle" class="dm-btn">🌙</button>
             </div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
+            <div class="home-badge">
+                <div class="pulse"></div> 100% Home Office
+            </div>
             <div class="hero-wrapper">
-                <div class="home-badge">
-                    <span class="pulse"></span> 100% REMOTE / HOME OFFICE
-                </div>
-                
-                <h1>Vydělávej online.<br> <span class="text-gradient">Z gauče.</span></h1>
-                <p class="subtitle">Přidej se k mladému týmu, který řeší prodej digitálního obsahu. Flexibilní směny, provize z prodeje a žádný korporátní bullshit.</p>
-                
-                <div class="cta-row">
-                    <a href="#apply" class="btn-glow">Začít vydělávat</a>
-                    <div class="info-row">
-                        <span>✅ PC nutností</span>
-                        <span>🔥 AJ výhodou</span>
-                    </div>
+                <h1>Vydělávej online.<br><span class="text-gradient">Z tvého gauče.</span></h1>
+                <p class="subtitle">Hledáme parťáky pro správu a prodej digitálního obsahu. Žádné zkušenosti? Nevadí, vše tě naučíme.</p>
+                <a href="#apply" class="btn-glow">Začni vydělávat ještě dnes</a>
+                <div class="info-row">
+                    <span>⚡ Rychlé zaučení</span>
+                    <span>💰 Týdenní vyplácení</span>
                 </div>
             </div>
-            
+
             <div class="hero-grid">
                 <div class="grid-card">
-                    <div class="card-icon">💸</div>
-                    <strong>Provize z prodeje</strong>
-                    <p>Tvůj skill = tvoje peníze. Fixní základ + procenta z obratu.</p>
-                </div>
-                <div class="grid-card">
-                    <div class="card-icon">📅</div>
-                    <strong>Volitelné směny</strong>
-                    <p>Dělej ráno nebo večer. Plánuj si 8h bloky podle sebe.</p>
+                    <div class="card-icon">🏠</div>
+                    <h3>Kdekoliv</h3>
+                    <p>Stačí ti notebook a internet. Pracuj z postele nebo z kavárny.</p>
                 </div>
                 <div class="grid-card active-card">
-                    <div class="active-badge">Nábor otevřen</div>
-                    <div class="card-icon">🚀</div>
-                    <strong>Start ihned</strong>
-                    <p>Onboarding zvládneš online. Zítra můžeš začít.</p>
+                    <div class="active-badge">Nejčastější</div>
+                    <div class="card-icon">💸</div>
+                    <h3>800 - 1500€</h3>
+                    <p>Průměrný měsíční výdělek našich šikovných začátečníků.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="card-icon">📈</div>
+                    <h3>Bonusy</h3>
+                    <p>Čím víc prodáš, tím víc dostaneš. Limity u nás neexistují.</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="details" class="section-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2>Co budeš vlastně dělat?</h2>
-                <p>Nehledáme atomové vědce. Hledáme komunikativní lidi.</p>
-            </div>
-            
-            <div class="feature-grid">
-                <div class="f-card">
-                    <h3>💬 Chat & Support</h3>
-                    <p>Komunikuješ se zákazníky na chatu. Žádné volání. Musíš umět rychle psát a reagovat.</p>
-                </div>
-                <div class="f-card">
-                    <h3>📈 Online Prodej</h3>
-                    <p>Tvým cílem je prodat digitální obsah. Obchodní duch se cení (a je královsky placený).</p>
-                </div>
-                <div class="f-card">
-                    <h3>💻 Digital Work</h3>
-                    <p>Práce s interními systémy a obsahem. Vše tě naučíme, stačí nebýt technický antitalent.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="requirements" class="section-white">
+    <section class="section-dark" id="about">
         <div class="container grid-split">
-            <div class="text-side">
-                <span class="tiny-label">POŽADAVKY</span>
-                <h2>Máš na to?</h2>
-                <p class="lead">Hledáme <strong>Digital Natives</strong>. Lidi, co vyrostli s telefonem v ruce a chápou online trendy.</p>
-                
+            <div class="app-showcase">
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="user-info">
+                            <div class="avatar-circle">MČ</div>
+                            <div class="user-text">
+                                <strong>Tvůj Profil</strong>
+                                <small>Aktivní nyní</small>
+                            </div>
+                        </div>
+                        <div class="menu-dots">...</div>
+                    </div>
+                    <div class="balance-section">
+                        <span class="label">Týdenní výdělek</span>
+                        <div class="amount">8 450 Kč</div>
+                        <div class="trend positive">↑ o 12% více než minulý týden</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Zprávy</span>
+                            <span class="stat-value">1,240</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Status</span>
+                            <span class="stat-value active-text">Online</span>
+                        </div>
+                    </div>
+                    <div class="mini-chart">
+                        <div class="bar" style="height: 40%;"></div>
+                        <div class="bar" style="height: 60%;"></div>
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 80%;"></div>
+                        <div class="bar active" style="height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="tiny-label">NÁPLŇ PRÁCE</span>
+                <h2>Co budeš vlastně dělat?</h2>
                 <ul class="req-list">
                     <li>
-                        <span class="icon-check">🧠</span>
+                        <div class="icon-check">💬</div>
                         <div>
-                            <strong>Gen Z Mindset</strong>
-                            <small>Telefon a klávesnice je tvoje prodloužená ruka. Jsi online jako doma.</small>
+                            <strong>Chatování s fanoušky</strong>
+                            <p>Budeš odepisovat na zprávy a budovat vztahy se zákazníky.</p>
                         </div>
                     </li>
                     <li>
-                        <span class="icon-check">💻</span>
+                        <div class="icon-check">📦</div>
                         <div>
-                            <strong>PC/Notebook + Rychlý net</strong>
-                            <small>Naprostá nutnost. Na telefonu to dělat nejde.</small>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="icon-check">🇬🇧</span>
-                        <div>
-                            <strong>Angličtina (Výhodou)</strong>
-                            <small>Pokud umíš AJ, máš u nás velké plus a lepší možnosti.</small>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="icon-check">⚡</span>
-                        <div>
-                            <strong>Drive & Flexibilita</strong>
-                            <small>Nezáleží na věku, ale na energii. Ideální ke studiu (směny si volíš).</small>
+                            <strong>Prodej obsahu</strong>
+                            <p>Nabízení exkluzivních fotek a videí přímo v chatu.</p>
                         </div>
                     </li>
                 </ul>
             </div>
-            
-            <div class="visual-side">
-                <div class="app-card">
-                    <div class="app-header">
-                        <div class="user-info">
-                            <div class="avatar-circle">JA</div>
-                            <div class="user-text">
-                                <strong>Můj Přehled</strong>
-                                <small>Online • Týden 42</small>
-                            </div>
-                        </div>
-                        <div class="menu-dots">•••</div>
-                    </div>
+        </div>
+    </section>
 
-                    <div class="balance-section">
-                        <span class="label">Aktuální týdenní výdělek</span>
-                        <div class="amount">8.450 Kč</div>
-                        <div class="trend positive">▲ +12% oproti minule</div>
+    <section class="section-white">
+        <div class="container">
+            <div class="center-text">
+                <h2>Často se ptáte</h2>
+            </div>
+            <div class="max-800">
+                <div class="acc-item">
+                    <div class="acc-head">Musím mít zkušenosti? <span class="plus">+</span></div>
+                    <div class="acc-body">
+                        <p>Vůbec ne. Máme propracovaný systém školení, který tě provede od úplných základů až po profi prodej.</p>
                     </div>
-
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-label">Čas online</span>
-                            <span class="stat-value">22h 15m</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Zprávy</span>
-                            <span class="stat-value">1.420</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Konverze</span>
-                            <span class="stat-value">4.8%</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Bonus</span>
-                            <span class="stat-value active-text">Aktivní</span>
-                        </div>
-                    </div>
-
-                    <div class="mini-chart">
-                        <div class="bar" style="height: 40%"></div>
-                        <div class="bar" style="height: 60%"></div>
-                        <div class="bar" style="height: 35%"></div>
-                        <div class="bar" style="height: 70%"></div>
-                        <div class="bar" style="height: 50%"></div>
-                        <div class="bar" style="height: 80%"></div>
-                        <div class="bar active" style="height: 95%"></div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-head">Kolik času mi to zabere? <span class="plus">+</span></div>
+                    <div class="acc-body">
+                        <p>Práce je flexibilní, ale pro solidní výdělky doporučujeme alespoň 4-6 hodin denně.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-dark">
-        <div class="container max-800">
-            <h2 class="center-text">Rychlé odpovědi</h2>
-            <div class="accordion">
-                <div class="acc-item">
-                    <div class="acc-head">Je potřeba praxe?</div>
-                    <div class="acc-body">Ne. Pokud jsi komunikativní a umíš s PC, zaškolíme tě.</div>
-                </div>
-                <div class="acc-item">
-                    <div class="acc-head">Jak probíhá výplata?</div>
-                    <div class="acc-body">Standardně 1x měsíčně na účet. Spolupráce na IČO (fakturace) nebo dle domluvy.</div>
-                </div>
-                <div class="acc-item">
-                    <div class="acc-head">Co technika?</div>
-                    <div class="acc-body">Musíš mít vlastní spolehlivý počítač. Pokud se ti seká internet, nebude to fungovat.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="apply" class="cta-section">
+    <section class="section-dark" id="apply">
         <div class="container">
             <div class="cta-box">
-                <div class="cta-content">
-                    <h2>Chceš to zkusit?</h2>
-                    <p>Napiš nám. Ozveme se jen vybraným uchazečům.</p>
-                    
-                    <form action="https://formsubmit.co/TVUJ_EMAIL@GMAIL.COM" method="POST" class="simple-form">
-                        
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="Nová přihláška z webu!">
-
-                        <div class="form-row">
-                            <input type="text" name="name" required placeholder="Jméno a Příjmení">
-                            <input type="text" name="age" required placeholder="Věk">
-                        </div>
-                        <input type="email" name="email" required placeholder="Tvůj E-mail">
-                        
-                        <div class="select-wrapper">
-                            <select name="english">
-                                <option value="" disabled selected>Umíš anglicky?</option>
-                                <option value="yes">Ano, domluvím se</option>
-                                <option value="basic">Základy</option>
-                                <option value="no">Ne</option>
-                            </select>
-                        </div>
-
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="adult" required>
-                            <label for="adult">Je mi 18+ a mám vlastní PC</label>
-                        </div>
-
-                        <button type="submit" class="btn-submit">Odeslat zájem 🚀</button>
-                    </form>
-                </div>
+                <h2>Chceš se přidat k týmu?</h2>
+                <p>Vyplň krátký formulář a ozveme se ti do 24 hodin.</p>
+                
+                <form action="https://www.ninjove.com/f/TVOJE_ID" method="POST" class="simple-form">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Jméno a příjmení" required>
+                        <input type="email" name="email" placeholder="Tvůj e-mail" required>
+                    </div>
+                    <select name="experience">
+                        <option value="" disabled selected>Zkušenosti s prodejem?</option>
+                        <option value="none">Žádné, chci se učit</option>
+                        <option value="basic">Základní</option>
+                        <option value="pro">Jsem profík</option>
+                    </select>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" required id="podminky">
+                        <label for="podminky">Souhlasím se zpracováním údajů</label>
+                    </div>
+                    <button type="submit" class="btn-submit">Odeslat přihlášku</button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">MediaChat<span class="dot">.</span></div>
-                    <p>Moderní platforma pro monetizaci digitálního obsahu a community management.</p>
-                </div>
-                <div class="footer-links">
-                    <strong>Společnost</strong>
-                    <a href="#">O nás</a>
-                    <a href="#">Kontakt</a>
-                    <a href="#">Kariéra</a>
-                </div>
-                <div class="footer-links">
-                    <strong>Legislativa</strong>
-                    <a href="#">GDPR</a>
-                    <a href="#">Podmínky spolupráce</a>
-                    <a href="#">Ochrana údajů</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2026 MediaChat Team. Všechna práva vyhrazena.</span>
-                <span class="secure-badge">🔒 100% Secure Data</span>
-            </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 MediaChat. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
+    <script>
+        // FAQ Akordeon
+        document.querySelectorAll('.acc-head').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+                const span = header.querySelector('.plus');
+                span.textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
