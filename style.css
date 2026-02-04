@@ -21,10 +21,10 @@ body {
     color: var(--text-main);
     background-color: var(--bg-white);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* --- TEXTURE & BACKGROUND --- */
-/* Technická mřížka */
 .bg-grid {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2;
     background-image: 
@@ -47,7 +47,7 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 .center-text { text-align: center; margin-bottom: 50px; }
 
-/* --- SECTIONS (CONTRAST) --- */
+/* --- SECTIONS --- */
 .section-white { background: var(--bg-white); padding: 100px 0; }
 .section-dark { 
     background: var(--bg-dark); 
@@ -117,7 +117,7 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
 }
 .tiny-label { color: var(--primary); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; display: block; margin-bottom: 10px; }
 
-/* --- APP DASHBOARD (New Professional Look) --- */
+/* --- APP DASHBOARD (Tilt odstraněn) --- */
 .app-card {
     background: white; border-radius: 24px; padding: 30px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
@@ -125,10 +125,11 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
     max-width: 400px; margin: 0 auto;
     font-family: 'Plus Jakarta Sans', sans-serif;
     position: relative;
-    transform: rotate(-2deg);
+    /* Změněno z -2deg na 0 */
+    transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
-.app-card:hover { transform: rotate(0deg) scale(1.02); }
+.app-card:hover { transform: scale(1.02); }
 
 .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
 .user-info { display: flex; gap: 12px; align-items: center; }
@@ -164,10 +165,14 @@ h1 { font-size: 3.5rem; color: var(--text-main); }
 
 /* --- FAQ & FORM --- */
 .max-800 { max-width: 700px; }
-.acc-item { background: white; border-radius: 12px; margin-bottom: 15px; border: 1px solid #cbd5e1; }
-.acc-head { padding: 20px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-.acc-body { padding: 0 20px 20px; color: var(--text-gray); display: none; }
-.acc-item:hover .acc-body { display: block; }
+.acc-item { background: white; border-radius: 12px; margin-bottom: 15px; border: 1px solid #cbd5e1; overflow: hidden; }
+.acc-head { padding: 20px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+.acc-head:hover { background: #f8fafc; }
+.acc-body { padding: 0 20px; color: var(--text-gray); max-height: 0; overflow: hidden; transition: all 0.3s ease-out; opacity: 0; }
+
+/* Aktivní třída pro FAQ přes JS */
+.acc-item.active .acc-body { padding: 0 20px 20px; max-height: 200px; opacity: 1; }
+.acc-item.active .acc-head { color: var(--primary); }
 
 .cta-section { padding: 80px 0; background: white; }
 .cta-box {
@@ -183,7 +188,23 @@ input, select {
 input:focus, select:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.1); }
 select option { background: var(--text-main); color: white; }
 .checkbox-wrapper { display: flex; gap: 10px; justify-content: center; align-items: center; font-size: 0.9rem; color: #cbd5e1; }
-.btn-submit { width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; }
+.btn-submit { width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.2s; }
+.btn-submit:hover { background: #4338ca; transform: scale(1.02); }
+
+/* --- DARK MODE --- */
+body.dark-mode {
+    --bg-white: #0f172a;
+    --bg-dark: #1e293b;
+    --text-main: #f8fafc;
+    --text-gray: #94a3b8;
+}
+body.dark-mode .glass-nav { background: rgba(15, 23, 42, 0.85); border-color: rgba(255,255,255,0.1); }
+body.dark-mode .nav-links a { color: #f8fafc; }
+body.dark-mode .grid-card, body.dark-mode .f-card, body.dark-mode .app-card, body.dark-mode .acc-item, body.dark-mode .home-badge { 
+    background: #1e293b; border-color: rgba(255,255,255,0.1); color: #f8fafc; 
+}
+body.dark-mode .icon-check { background: #312e81; color: #a5b4fc; }
+body.dark-mode footer { background: #0f172a; border-color: #1e293b; }
 
 /* --- FOOTER --- */
 footer { background: white; padding: 60px 0 20px; border-top: 1px solid #cbd5e1; margin-top: 0; }
