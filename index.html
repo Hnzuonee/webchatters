@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediaChat | Online Content Team</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KRWSGZ84');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRWSGZ84"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="bg-grid"></div>
 
@@ -154,16 +173,16 @@
                     </div>
                     <input type="email" name="email" placeholder="Tvůj e-mail" required>
                     
-                    <select name="anglictina" required style="width: 100%; padding: 18px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; margin-bottom: 15px; font-family: inherit;">
+                    <select name="anglictina" required>
                         <option value="" disabled selected>Umíš anglicky?</option>
                         <option value="ano">Ano, domluvím se</option>
                         <option value="zaklady">Základy</option>
                         <option value="ne">Ne</option>
                     </select>
 
-                    <div class="checkbox-wrapper" style="text-align: left; margin: 10px 0 20px 0; font-size: 0.9rem;">
+                    <div class="checkbox-wrapper">
                         <input type="checkbox" name="podminky_splneny" id="adult" required>
-                        <label for="adult" style="margin-left: 10px; cursor: pointer;">Je mi 18+ a mám vlastní PC</label>
+                        <label for="adult">Je mi 18+ a mám vlastní PC</label>
                     </div>
 
                     <button type="submit" class="btn-submit">Odeslat přihlášku 🚀</button>
@@ -173,12 +192,12 @@
     </section>
 
     <script>
-        // Dark Mode Logic
         const btn = document.getElementById('dark-mode-toggle');
         btn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
     </script>
+
 </body>
 </html>
